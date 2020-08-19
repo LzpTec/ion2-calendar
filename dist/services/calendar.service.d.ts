@@ -1,4 +1,5 @@
 import { CalendarDay, CalendarModalOptions, CalendarMonth, CalendarOriginal, CalendarResult } from '../calendar.model';
+import * as i0 from "@angular/core";
 export declare class CalendarService {
     private readonly defaultOpts;
     constructor(defaultOpts: CalendarModalOptions);
@@ -11,4 +12,6 @@ export declare class CalendarService {
     createMonthsByPeriod(startTime: number, monthsNum: number, opt: CalendarModalOptions): Array<CalendarMonth>;
     wrapResult(original: CalendarDay[], pickMode: string): any;
     multiFormat(time: number): CalendarResult;
+    static ɵfac: i0.ɵɵFactoryDef<CalendarService, [{ optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDef<CalendarService>;
 }

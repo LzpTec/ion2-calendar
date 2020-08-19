@@ -2,6 +2,7 @@ import { EventEmitter, OnInit, Provider } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { CalendarComponentMonthChange, CalendarComponentOptions, CalendarComponentPayloadTypes, CalendarComponentTypeProperty, CalendarDay, CalendarModalOptions, CalendarMonth } from '../calendar.model';
 import { CalendarService } from '../services/calendar.service';
+import * as i0 from "@angular/core";
 export declare const ION_CAL_VALUE_ACCESSOR: Provider;
 export declare class CalendarComponent implements ControlValueAccessor, OnInit {
     calSvc: CalendarService;
@@ -56,4 +57,6 @@ export declare class CalendarComponent implements ControlValueAccessor, OnInit {
     registerOnChange(fn: () => {}): void;
     registerOnTouched(fn: () => {}): void;
     _writeValue(value: any): void;
+    static ɵfac: i0.ɵɵFactoryDef<CalendarComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<CalendarComponent, "ion-calendar", never, { "format": "format"; "type": "type"; "readonly": "readonly"; "options": "options"; }, { "change": "change"; "monthChange": "monthChange"; "select": "select"; "selectStart": "selectStart"; "selectEnd": "selectEnd"; }, never, never>;
 }

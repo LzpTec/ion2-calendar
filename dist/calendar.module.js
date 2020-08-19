@@ -1,10 +1,4 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CalendarModule = exports.calendarController = void 0;
 var common_1 = require("@angular/common");
@@ -15,6 +9,12 @@ var calendar_controller_1 = require("./calendar.controller");
 var components_1 = require("./components");
 var calendar_options_provider_1 = require("./services/calendar-options.provider");
 var calendar_service_1 = require("./services/calendar.service");
+var i0 = require("@angular/core");
+var i1 = require("./components/calendar.modal");
+var i2 = require("./components/calendar-week.component");
+var i3 = require("./components/month.component");
+var i4 = require("./components/calendar.component");
+var i5 = require("./components/month-picker.component");
 function calendarController(modalCtrl, calSvc) {
     return new calendar_controller_1.CalendarController(modalCtrl, calSvc);
 }
@@ -22,35 +22,44 @@ exports.calendarController = calendarController;
 var CalendarModule = /** @class */ (function () {
     function CalendarModule() {
     }
-    CalendarModule_1 = CalendarModule;
     CalendarModule.forRoot = function (defaultOptions) {
         if (defaultOptions === void 0) { defaultOptions = {}; }
         return {
-            ngModule: CalendarModule_1,
+            ngModule: CalendarModule,
             providers: [
                 { provide: calendar_options_provider_1.DEFAULT_CALENDAR_OPTIONS, useValue: defaultOptions }
             ]
         };
     };
-    var CalendarModule_1;
-    CalendarModule = CalendarModule_1 = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule, angular_1.IonicModule, forms_1.FormsModule],
-            declarations: components_1.CALENDAR_COMPONENTS,
-            exports: components_1.CALENDAR_COMPONENTS,
-            entryComponents: components_1.CALENDAR_COMPONENTS,
-            providers: [
-                calendar_service_1.CalendarService,
-                {
-                    provide: calendar_controller_1.CalendarController,
-                    useFactory: calendarController,
-                    deps: [angular_1.ModalController, calendar_service_1.CalendarService],
-                },
-            ],
-            schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-        })
-    ], CalendarModule);
+    CalendarModule.ɵmod = i0.ɵɵdefineNgModule({ type: CalendarModule });
+    CalendarModule.ɵinj = i0.ɵɵdefineInjector({ factory: function CalendarModule_Factory(t) { return new (t || CalendarModule)(); }, providers: [
+            calendar_service_1.CalendarService,
+            {
+                provide: calendar_controller_1.CalendarController,
+                useFactory: calendarController,
+                deps: [angular_1.ModalController, calendar_service_1.CalendarService],
+            },
+        ], imports: [[common_1.CommonModule, angular_1.IonicModule, forms_1.FormsModule]] });
     return CalendarModule;
 }());
 exports.CalendarModule = CalendarModule;
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(CalendarModule, { declarations: [i1.CalendarModal, i2.CalendarWeekComponent, i3.MonthComponent, i4.CalendarComponent, i5.MonthPickerComponent], imports: [common_1.CommonModule, angular_1.IonicModule, forms_1.FormsModule], exports: [i1.CalendarModal, i2.CalendarWeekComponent, i3.MonthComponent, i4.CalendarComponent, i5.MonthPickerComponent] }); })();
+/*@__PURE__*/ (function () { i0.ɵsetClassMetadata(CalendarModule, [{
+        type: core_1.NgModule,
+        args: [{
+                imports: [common_1.CommonModule, angular_1.IonicModule, forms_1.FormsModule],
+                declarations: components_1.CALENDAR_COMPONENTS,
+                exports: components_1.CALENDAR_COMPONENTS,
+                entryComponents: components_1.CALENDAR_COMPONENTS,
+                providers: [
+                    calendar_service_1.CalendarService,
+                    {
+                        provide: calendar_controller_1.CalendarController,
+                        useFactory: calendarController,
+                        deps: [angular_1.ModalController, calendar_service_1.CalendarService],
+                    },
+                ],
+                schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
+            }]
+    }], null, null); })();
 //# sourceMappingURL=calendar.module.js.map

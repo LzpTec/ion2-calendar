@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, OnInit, Renderer2 } from 
 import { IonContent, ModalController, NavParams } from '@ionic/angular';
 import { CalendarDay, CalendarModalOptions, CalendarMonth } from '../calendar.model';
 import { CalendarService } from '../services/calendar.service';
+import * as i0 from "@angular/core";
 export declare class CalendarModal implements OnInit, AfterViewInit {
     private _renderer;
     _elementRef: ElementRef;
@@ -49,4 +50,6 @@ export declare class CalendarModal implements OnInit, AfterViewInit {
     _getDayTime(date: any): number;
     _monthFormat(date: any): string;
     trackByIndex(index: number, momentDate: CalendarMonth): number;
+    static ɵfac: i0.ɵɵFactoryDef<CalendarModal, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<CalendarModal, "ion-calendar-modal", never, { "options": "options"; }, {}, never, ["[sub-header]"]>;
 }

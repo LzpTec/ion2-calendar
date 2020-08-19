@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { CalendarDay, CalendarMonth, CalendarOriginal, PickMode } from '../calendar.model';
+import * as i0 from "@angular/core";
 export declare const MONTH_VALUE_ACCESSOR: any;
 export declare class MonthComponent implements ControlValueAccessor, AfterViewInit {
     ref: ChangeDetectorRef;
@@ -33,4 +34,6 @@ export declare class MonthComponent implements ControlValueAccessor, AfterViewIn
     isStartSelection(day: CalendarDay): boolean;
     isSelected(time: number): boolean;
     onSelected(item: CalendarDay): void;
+    static ɵfac: i0.ɵɵFactoryDef<MonthComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<MonthComponent, "ion-calendar-month", never, { "month": "month"; "pickMode": "pickMode"; "isSaveHistory": "isSaveHistory"; "id": "id"; "readonly": "readonly"; "color": "color"; }, { "change": "change"; "select": "select"; "selectStart": "selectStart"; "selectEnd": "selectEnd"; }, never, never>;
 }

@@ -1,13 +1,4 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CalendarModal = void 0;
 var core_1 = require("@angular/core");
@@ -15,6 +6,97 @@ var angular_1 = require("@ionic/angular");
 var moment = require("moment");
 var config_1 = require("../config");
 var calendar_service_1 = require("../services/calendar.service");
+var i0 = require("@angular/core");
+var i1 = require("@ionic/angular");
+var i2 = require("../services/calendar.service");
+var i3 = require("@angular/common");
+var i4 = require("./calendar-week.component");
+var i5 = require("./month.component");
+var i6 = require("@angular/forms");
+var _c0 = ["months"];
+function CalendarModal_span_4_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r0._d.closeLabel);
+} }
+function CalendarModal_ion_icon_5_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "ion-icon", 13);
+} }
+function CalendarModal_ion_button_9_span_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var ctx_r6 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r6._d.clearLabel);
+} }
+function CalendarModal_ion_button_9_Template(rf, ctx) { if (rf & 1) {
+    var _r8 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "ion-button", 14);
+    i0.ɵɵlistener("click", function CalendarModal_ion_button_9_Template_ion_button_click_0_listener() { i0.ɵɵrestoreView(_r8); var ctx_r7 = i0.ɵɵnextContext(); return ctx_r7.clear(); });
+    i0.ɵɵtemplate(1, CalendarModal_ion_button_9_span_1_Template, 2, 1, "span", 3);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", !ctx_r2.canClear());
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r2._d.clearLabel !== "");
+} }
+function CalendarModal_ion_button_10_span_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var ctx_r9 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r9._d.doneLabel);
+} }
+function CalendarModal_ion_button_10_ion_icon_2_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "ion-icon", 17);
+} }
+function CalendarModal_ion_button_10_Template(rf, ctx) { if (rf & 1) {
+    var _r12 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "ion-button", 15);
+    i0.ɵɵlistener("click", function CalendarModal_ion_button_10_Template_ion_button_click_0_listener() { i0.ɵɵrestoreView(_r12); var ctx_r11 = i0.ɵɵnextContext(); return ctx_r11.done(); });
+    i0.ɵɵtemplate(1, CalendarModal_ion_button_10_span_1_Template, 2, 1, "span", 3);
+    i0.ɵɵtemplate(2, CalendarModal_ion_button_10_ion_icon_2_Template, 1, 0, "ion-icon", 16);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var ctx_r3 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", !ctx_r3.canDone());
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r3._d.doneLabel !== "" && !ctx_r3._d.doneIcon);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r3._d.doneIcon);
+} }
+function CalendarModal_ng_template_16_Template(rf, ctx) { if (rf & 1) {
+    var _r16 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 18);
+    i0.ɵɵelementStart(1, "h4", 19);
+    i0.ɵɵtext(2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "ion-calendar-month", 20);
+    i0.ɵɵlistener("change", function CalendarModal_ng_template_16_Template_ion_calendar_month_change_3_listener($event) { i0.ɵɵrestoreView(_r16); var ctx_r15 = i0.ɵɵnextContext(); return ctx_r15.onChange($event); })("ngModelChange", function CalendarModal_ng_template_16_Template_ion_calendar_month_ngModelChange_3_listener($event) { i0.ɵɵrestoreView(_r16); var ctx_r17 = i0.ɵɵnextContext(); return ctx_r17.datesTemp = $event; });
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    var month_r13 = ctx.$implicit;
+    var i_r14 = ctx.index;
+    var ctx_r5 = i0.ɵɵnextContext();
+    i0.ɵɵattribute("id", "month-" + i_r14);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate(ctx_r5._monthFormat(month_r13.original.date));
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("month", month_r13)("pickMode", ctx_r5._d.pickMode)("isSaveHistory", ctx_r5._d.isSaveHistory)("id", ctx_r5._d.id)("color", ctx_r5._d.color)("ngModel", ctx_r5.datesTemp);
+} }
+var _c1 = [[["", "sub-header", ""]]];
+var _c2 = function (a0) { return { "multi-selection": a0 }; };
+var _c3 = ["[sub-header]"];
 var NUM_OF_MONTHS_TO_CREATE = 3;
 var CalendarModal = /** @class */ (function () {
     function CalendarModal(_renderer, _elementRef, params, modalCtrl, ref, calSvc) {
@@ -226,36 +308,88 @@ var CalendarModal = /** @class */ (function () {
     CalendarModal.prototype.trackByIndex = function (index, momentDate) {
         return momentDate.original ? momentDate.original.time : index;
     };
-    __decorate([
-        core_1.ViewChild(angular_1.IonContent),
-        __metadata("design:type", angular_1.IonContent)
-    ], CalendarModal.prototype, "content", void 0);
-    __decorate([
-        core_1.ViewChild('months'),
-        __metadata("design:type", core_1.ElementRef)
-    ], CalendarModal.prototype, "monthsEle", void 0);
-    __decorate([
-        core_1.HostBinding('class.ion-page'),
-        __metadata("design:type", Object)
-    ], CalendarModal.prototype, "ionPage", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Object)
-    ], CalendarModal.prototype, "options", void 0);
-    CalendarModal = __decorate([
-        core_1.Component({
-            selector: 'ion-calendar-modal',
-            styleUrls: ['./calendar.modal.scss'],
-            template: "\n    <ion-header>\n      <ion-toolbar [color]=\"_d.color\">\n          <ion-buttons slot=\"start\">\n              <ion-button type='button' slot=\"icon-only\" fill=\"clear\" (click)=\"onCancel()\">\n              <span *ngIf=\"_d.closeLabel !== '' && !_d.closeIcon\">{{ _d.closeLabel }}</span>\n              <ion-icon *ngIf=\"_d.closeIcon\" name=\"close\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n\n          <ion-title>{{ _d.title }}</ion-title>\n\n          <ion-buttons slot=\"end\">\n            <ion-button type='button' *ngIf=\"!!_d.clearLabel\" fill=\"clear\" [disabled]=\"!canClear()\" (click)=\"clear()\">\n              <span *ngIf=\"_d.clearLabel !== ''\">{{ _d.clearLabel }}</span>\n            </ion-button>\n            <ion-button type='button' slot=\"icon-only\" *ngIf=\"!_d.autoDone\" fill=\"clear\" [disabled]=\"!canDone()\" (click)=\"done()\">\n              <span *ngIf=\"_d.doneLabel !== '' && !_d.doneIcon\">{{ _d.doneLabel }}</span>\n              <ion-icon *ngIf=\"_d.doneIcon\" name=\"checkmark\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n      </ion-toolbar>\n\n      <ng-content select=\"[sub-header]\"></ng-content>\n\n      <ion-calendar-week\n        [color]=\"_d.color\"\n        [weekArray]=\"_d.weekdays\"\n        [weekStart]=\"_d.weekStart\">\n      </ion-calendar-week>\n\n    </ion-header>\n\n    <ion-content (ionScroll)=\"onScroll($event)\" class=\"calendar-page\" [scrollEvents]=\"true\"\n                 [ngClass]=\"{'multi-selection': _d.pickMode === 'multi'}\">\n\n      <div #months>\n        <ng-template ngFor let-month [ngForOf]=\"calendarMonths\" [ngForTrackBy]=\"trackByIndex\" let-i=\"index\">\n          <div class=\"month-box\" [attr.id]=\"'month-' + i\">\n            <h4 class=\"text-center month-title\">{{ _monthFormat(month.original.date) }}</h4>\n            <ion-calendar-month [month]=\"month\"\n                                [pickMode]=\"_d.pickMode\"\n                                [isSaveHistory]=\"_d.isSaveHistory\"\n                                [id]=\"_d.id\"\n                                [color]=\"_d.color\"\n                                (change)=\"onChange($event)\"\n                                [(ngModel)]=\"datesTemp\">\n            </ion-calendar-month>\n          </div>\n        </ng-template>\n\n      </div>\n\n      <ion-infinite-scroll threshold=\"25%\" (ionInfinite)=\"nextMonth($event)\">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n      </ion-infinite-scroll>\n\n    </ion-content>\n  ",
-        }),
-        __metadata("design:paramtypes", [core_1.Renderer2,
-            core_1.ElementRef,
-            angular_1.NavParams,
-            angular_1.ModalController,
-            core_1.ChangeDetectorRef,
-            calendar_service_1.CalendarService])
-    ], CalendarModal);
+    CalendarModal.ɵfac = function CalendarModal_Factory(t) { return new (t || CalendarModal)(i0.ɵɵdirectiveInject(i0.Renderer2), i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(i1.NavParams), i0.ɵɵdirectiveInject(i1.ModalController), i0.ɵɵdirectiveInject(i0.ChangeDetectorRef), i0.ɵɵdirectiveInject(i2.CalendarService)); };
+    CalendarModal.ɵcmp = i0.ɵɵdefineComponent({ type: CalendarModal, selectors: [["ion-calendar-modal"]], viewQuery: function CalendarModal_Query(rf, ctx) { if (rf & 1) {
+            i0.ɵɵviewQuery(angular_1.IonContent, true);
+            i0.ɵɵviewQuery(_c0, true);
+        } if (rf & 2) {
+            var _t;
+            i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.content = _t.first);
+            i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.monthsEle = _t.first);
+        } }, hostVars: 2, hostBindings: function CalendarModal_HostBindings(rf, ctx) { if (rf & 2) {
+            i0.ɵɵclassProp("ion-page", ctx.ionPage);
+        } }, inputs: { options: "options" }, ngContentSelectors: _c3, decls: 19, vars: 15, consts: [[3, "color"], ["slot", "start"], ["type", "button", "slot", "icon-only", "fill", "clear", 3, "click"], [4, "ngIf"], ["name", "close", 4, "ngIf"], ["slot", "end"], ["type", "button", "fill", "clear", 3, "disabled", "click", 4, "ngIf"], ["type", "button", "slot", "icon-only", "fill", "clear", 3, "disabled", "click", 4, "ngIf"], [3, "color", "weekArray", "weekStart"], [1, "calendar-page", 3, "scrollEvents", "ngClass", "ionScroll"], ["months", ""], ["ngFor", "", 3, "ngForOf", "ngForTrackBy"], ["threshold", "25%", 3, "ionInfinite"], ["name", "close"], ["type", "button", "fill", "clear", 3, "disabled", "click"], ["type", "button", "slot", "icon-only", "fill", "clear", 3, "disabled", "click"], ["name", "checkmark", 4, "ngIf"], ["name", "checkmark"], [1, "month-box"], [1, "text-center", "month-title"], [3, "month", "pickMode", "isSaveHistory", "id", "color", "ngModel", "change", "ngModelChange"]], template: function CalendarModal_Template(rf, ctx) { if (rf & 1) {
+            i0.ɵɵprojectionDef(_c1);
+            i0.ɵɵelementStart(0, "ion-header");
+            i0.ɵɵelementStart(1, "ion-toolbar", 0);
+            i0.ɵɵelementStart(2, "ion-buttons", 1);
+            i0.ɵɵelementStart(3, "ion-button", 2);
+            i0.ɵɵlistener("click", function CalendarModal_Template_ion_button_click_3_listener() { return ctx.onCancel(); });
+            i0.ɵɵtemplate(4, CalendarModal_span_4_Template, 2, 1, "span", 3);
+            i0.ɵɵtemplate(5, CalendarModal_ion_icon_5_Template, 1, 0, "ion-icon", 4);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(6, "ion-title");
+            i0.ɵɵtext(7);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(8, "ion-buttons", 5);
+            i0.ɵɵtemplate(9, CalendarModal_ion_button_9_Template, 2, 2, "ion-button", 6);
+            i0.ɵɵtemplate(10, CalendarModal_ion_button_10_Template, 3, 3, "ion-button", 7);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementEnd();
+            i0.ɵɵprojection(11);
+            i0.ɵɵelement(12, "ion-calendar-week", 8);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(13, "ion-content", 9);
+            i0.ɵɵlistener("ionScroll", function CalendarModal_Template_ion_content_ionScroll_13_listener($event) { return ctx.onScroll($event); });
+            i0.ɵɵelementStart(14, "div", null, 10);
+            i0.ɵɵtemplate(16, CalendarModal_ng_template_16_Template, 4, 8, "ng-template", 11);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(17, "ion-infinite-scroll", 12);
+            i0.ɵɵlistener("ionInfinite", function CalendarModal_Template_ion_infinite_scroll_ionInfinite_17_listener($event) { return ctx.nextMonth($event); });
+            i0.ɵɵelement(18, "ion-infinite-scroll-content");
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementEnd();
+        } if (rf & 2) {
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("color", ctx._d.color);
+            i0.ɵɵadvance(3);
+            i0.ɵɵproperty("ngIf", ctx._d.closeLabel !== "" && !ctx._d.closeIcon);
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("ngIf", ctx._d.closeIcon);
+            i0.ɵɵadvance(2);
+            i0.ɵɵtextInterpolate(ctx._d.title);
+            i0.ɵɵadvance(2);
+            i0.ɵɵproperty("ngIf", !!ctx._d.clearLabel);
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("ngIf", !ctx._d.autoDone);
+            i0.ɵɵadvance(2);
+            i0.ɵɵproperty("color", ctx._d.color)("weekArray", ctx._d.weekdays)("weekStart", ctx._d.weekStart);
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("scrollEvents", true)("ngClass", i0.ɵɵpureFunction1(13, _c2, ctx._d.pickMode === "multi"));
+            i0.ɵɵadvance(3);
+            i0.ɵɵproperty("ngForOf", ctx.calendarMonths)("ngForTrackBy", ctx.trackByIndex);
+        } }, directives: [i1.IonHeader, i1.IonToolbar, i1.IonButtons, i1.IonButton, i3.NgIf, i1.IonTitle, i4.CalendarWeekComponent, i1.IonContent, i3.NgClass, i3.NgForOf, i1.IonInfiniteScroll, i1.IonInfiniteScrollContent, i1.IonIcon, i5.MonthComponent, i6.NgControlStatus, i6.NgModel], styles: ["[_nghost-%COMP%]   ion-select[_ngcontent-%COMP%] {\n  max-width: unset; }\n  [_nghost-%COMP%]   ion-select[_ngcontent-%COMP%]   .select-icon[_ngcontent-%COMP%]    > .select-icon-inner[_ngcontent-%COMP%], [_nghost-%COMP%]   ion-select[_ngcontent-%COMP%]   .select-text[_ngcontent-%COMP%] {\n    color: #fff !important; }\n  [_nghost-%COMP%]   ion-select.select-ios[_ngcontent-%COMP%] {\n    max-width: unset; }\n\n[_nghost-%COMP%]   .calendar-page[_ngcontent-%COMP%] {\n  background-color: #fbfbfb; }\n\n[_nghost-%COMP%]   .month-box[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 100%;\n  padding-bottom: 1em;\n  border-bottom: 1px solid #f1f1f1; }\n\n[_nghost-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-weight: 400;\n  font-size: 1.1rem;\n  display: block;\n  text-align: center;\n  margin: 1rem 0 0;\n  color: #929292; }"] });
     return CalendarModal;
 }());
 exports.CalendarModal = CalendarModal;
+/*@__PURE__*/ (function () { i0.ɵsetClassMetadata(CalendarModal, [{
+        type: core_1.Component,
+        args: [{
+                selector: 'ion-calendar-modal',
+                styleUrls: ['./calendar.modal.scss'],
+                template: "\n    <ion-header>\n      <ion-toolbar [color]=\"_d.color\">\n          <ion-buttons slot=\"start\">\n              <ion-button type='button' slot=\"icon-only\" fill=\"clear\" (click)=\"onCancel()\">\n              <span *ngIf=\"_d.closeLabel !== '' && !_d.closeIcon\">{{ _d.closeLabel }}</span>\n              <ion-icon *ngIf=\"_d.closeIcon\" name=\"close\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n\n          <ion-title>{{ _d.title }}</ion-title>\n\n          <ion-buttons slot=\"end\">\n            <ion-button type='button' *ngIf=\"!!_d.clearLabel\" fill=\"clear\" [disabled]=\"!canClear()\" (click)=\"clear()\">\n              <span *ngIf=\"_d.clearLabel !== ''\">{{ _d.clearLabel }}</span>\n            </ion-button>\n            <ion-button type='button' slot=\"icon-only\" *ngIf=\"!_d.autoDone\" fill=\"clear\" [disabled]=\"!canDone()\" (click)=\"done()\">\n              <span *ngIf=\"_d.doneLabel !== '' && !_d.doneIcon\">{{ _d.doneLabel }}</span>\n              <ion-icon *ngIf=\"_d.doneIcon\" name=\"checkmark\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n      </ion-toolbar>\n\n      <ng-content select=\"[sub-header]\"></ng-content>\n\n      <ion-calendar-week\n        [color]=\"_d.color\"\n        [weekArray]=\"_d.weekdays\"\n        [weekStart]=\"_d.weekStart\">\n      </ion-calendar-week>\n\n    </ion-header>\n\n    <ion-content (ionScroll)=\"onScroll($event)\" class=\"calendar-page\" [scrollEvents]=\"true\"\n                 [ngClass]=\"{'multi-selection': _d.pickMode === 'multi'}\">\n\n      <div #months>\n        <ng-template ngFor let-month [ngForOf]=\"calendarMonths\" [ngForTrackBy]=\"trackByIndex\" let-i=\"index\">\n          <div class=\"month-box\" [attr.id]=\"'month-' + i\">\n            <h4 class=\"text-center month-title\">{{ _monthFormat(month.original.date) }}</h4>\n            <ion-calendar-month [month]=\"month\"\n                                [pickMode]=\"_d.pickMode\"\n                                [isSaveHistory]=\"_d.isSaveHistory\"\n                                [id]=\"_d.id\"\n                                [color]=\"_d.color\"\n                                (change)=\"onChange($event)\"\n                                [(ngModel)]=\"datesTemp\">\n            </ion-calendar-month>\n          </div>\n        </ng-template>\n\n      </div>\n\n      <ion-infinite-scroll threshold=\"25%\" (ionInfinite)=\"nextMonth($event)\">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n      </ion-infinite-scroll>\n\n    </ion-content>\n  ",
+            }]
+    }], function () { return [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i1.NavParams }, { type: i1.ModalController }, { type: i0.ChangeDetectorRef }, { type: i2.CalendarService }]; }, { content: [{
+            type: core_1.ViewChild,
+            args: [angular_1.IonContent]
+        }], monthsEle: [{
+            type: core_1.ViewChild,
+            args: ['months']
+        }], ionPage: [{
+            type: core_1.HostBinding,
+            args: ['class.ion-page']
+        }], options: [{
+            type: core_1.Input
+        }] }); })();
 //# sourceMappingURL=calendar.modal.js.map
