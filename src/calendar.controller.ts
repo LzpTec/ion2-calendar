@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core';
-
-import { ModalOptions, CalendarModalOptions } from './calendar.model';
+import { CalendarModalOptions, ModalOptions } from './calendar.model';
 import { CalendarModal } from './components/calendar.modal';
 import { CalendarService } from './services/calendar.service';
 
 @Injectable()
 export class CalendarController {
-  constructor(public modalCtrl: ModalController, public calSvc: CalendarService) {}
+  constructor(public modalCtrl: ModalController, public calSvc: CalendarService) { }
 
   /**
    * @deprecated

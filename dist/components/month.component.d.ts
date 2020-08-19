@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, AfterViewInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { CalendarDay, CalendarMonth, CalendarOriginal, PickMode } from '../calendar.model';
 export declare const MONTH_VALUE_ACCESSOR: any;
@@ -19,10 +19,10 @@ export declare class MonthComponent implements ControlValueAccessor, AfterViewIn
     _onChanged: Function;
     _onTouched: Function;
     readonly DAY_DATE_FORMAT = "MMMM dd, yyyy";
-    readonly _isRange: boolean;
+    get _isRange(): boolean;
     constructor(ref: ChangeDetectorRef);
     ngAfterViewInit(): void;
-    readonly value: CalendarDay[];
+    get value(): CalendarDay[];
     writeValue(obj: any): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

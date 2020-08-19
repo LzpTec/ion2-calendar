@@ -1,6 +1,6 @@
-import { ElementRef, ChangeDetectorRef, Renderer2, OnInit, AfterViewInit } from '@angular/core';
-import { NavParams, ModalController, IonContent } from '@ionic/angular';
-import { CalendarDay, CalendarMonth, CalendarModalOptions } from '../calendar.model';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { IonContent, ModalController, NavParams } from '@ionic/angular';
+import { CalendarDay, CalendarModalOptions, CalendarMonth } from '../calendar.model';
 import { CalendarService } from '../services/calendar.service';
 export declare class CalendarModal implements OnInit, AfterViewInit {
     private _renderer;

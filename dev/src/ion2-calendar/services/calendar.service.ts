@@ -1,14 +1,6 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import * as moment from 'moment';
-
-import {
-  CalendarOriginal,
-  CalendarDay,
-  CalendarMonth,
-  CalendarModalOptions,
-  CalendarResult,
-  DayConfig,
-} from '../calendar.model';
+import { CalendarDay, CalendarModalOptions, CalendarMonth, CalendarOriginal, CalendarResult, DayConfig } from '../calendar.model';
 import { defaults, pickModes } from '../config';
 import { DEFAULT_CALENDAR_OPTIONS } from './calendar-options.provider';
 

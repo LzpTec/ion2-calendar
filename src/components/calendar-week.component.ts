@@ -19,7 +19,7 @@ export class CalendarWeekComponent {
   @Input()
   color: string = defaults.COLOR;
 
-  constructor() {}
+  constructor() { }
 
   @Input()
   set weekArray(value: string[]) {

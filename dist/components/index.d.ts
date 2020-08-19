@@ -1,6 +1,6 @@
-import { CalendarModal } from "./calendar.modal";
 import { CalendarWeekComponent } from "./calendar-week.component";
-import { MonthComponent } from "./month.component";
 import { CalendarComponent } from "./calendar.component";
+import { CalendarModal } from "./calendar.modal";
 import { MonthPickerComponent } from "./month-picker.component";
-export declare const CALENDAR_COMPONENTS: (typeof CalendarModal | typeof CalendarWeekComponent | typeof MonthComponent | typeof CalendarComponent | typeof MonthPickerComponent)[];
+import { MonthComponent } from "./month.component";
+export declare const CALENDAR_COMPONENTS: (typeof CalendarModal | typeof CalendarWeekComponent | typeof CalendarComponent | typeof MonthPickerComponent | typeof MonthComponent)[];

@@ -38,7 +38,7 @@ export class MonthPickerComponent {
     return this._monthFormat;
   }
 
-  constructor() {}
+  constructor() { }
 
   _onSelect(month: number): void {
     this.select.emit(month);

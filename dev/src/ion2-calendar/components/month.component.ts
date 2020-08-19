@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, Input, Output, EventEmitter, forwardRef, AfterViewInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CalendarDay, CalendarMonth, CalendarOriginal, PickMode } from '../calendar.model';
 import { defaults, pickModes } from '../config';
@@ -106,7 +106,7 @@ export class MonthComponent implements ControlValueAccessor, AfterViewInit {
     return this.pickMode === pickModes.RANGE;
   }
 
-  constructor(public ref: ChangeDetectorRef) {}
+  constructor(public ref: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
     this._isInit = true;

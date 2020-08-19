@@ -6,14 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CalendarModule = exports.calendarController = void 0;
+var common_1 = require("@angular/common");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var common_1 = require("@angular/common");
 var angular_1 = require("@ionic/angular");
 var calendar_controller_1 = require("./calendar.controller");
+var components_1 = require("./components");
 var calendar_options_provider_1 = require("./services/calendar-options.provider");
 var calendar_service_1 = require("./services/calendar.service");
-var components_1 = require("./components");
 function calendarController(modalCtrl, calSvc) {
     return new calendar_controller_1.CalendarController(modalCtrl, calSvc);
 }

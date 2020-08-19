@@ -1,19 +1,9 @@
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  ChangeDetectorRef,
-  Renderer2,
-  OnInit,
-  Input,
-  AfterViewInit,
-  HostBinding,
-} from '@angular/core';
-import { NavParams, ModalController, IonContent } from '@ionic/angular';
-import { CalendarDay, CalendarMonth, CalendarModalOptions } from '../calendar.model';
-import { CalendarService } from '../services/calendar.service';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { IonContent, ModalController, NavParams } from '@ionic/angular';
 import * as moment from 'moment';
+import { CalendarDay, CalendarModalOptions, CalendarMonth } from '../calendar.model';
 import { pickModes } from '../config';
+import { CalendarService } from '../services/calendar.service';
 
 const NUM_OF_MONTHS_TO_CREATE = 3;
 
@@ -109,7 +99,7 @@ export class CalendarModal implements OnInit, AfterViewInit {
     public modalCtrl: ModalController,
     public ref: ChangeDetectorRef,
     public calSvc: CalendarService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.init();

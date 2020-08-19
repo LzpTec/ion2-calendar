@@ -1,19 +1,17 @@
-import { Component, Input, OnInit, Output, EventEmitter, forwardRef, Provider } from '@angular/core';
-
-import {
-  CalendarMonth,
-  CalendarModalOptions,
-  CalendarComponentOptions,
-  CalendarDay,
-  CalendarComponentPayloadTypes,
-  CalendarComponentMonthChange,
-  CalendarComponentTypeProperty,
-} from '../calendar.model';
-import { CalendarService } from '../services/calendar.service';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, Provider } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-
 import * as moment from 'moment';
+import {
+  CalendarComponentMonthChange, CalendarComponentOptions,
+
+  CalendarComponentPayloadTypes,
+
+  CalendarComponentTypeProperty, CalendarDay, CalendarModalOptions, CalendarMonth
+} from '../calendar.model';
 import { defaults, pickModes } from '../config';
+import { CalendarService } from '../services/calendar.service';
+
+
 
 export const ION_CAL_VALUE_ACCESSOR: Provider = {
   provide: NG_VALUE_ACCESSOR,
@@ -140,7 +138,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit {
 
   readonly MONTH_DATE_FORMAT = 'MMMM yyyy';
 
-  constructor(public calSvc: CalendarService) {}
+  constructor(public calSvc: CalendarService) { }
 
   ngOnInit(): void {
     this.initOpt();
@@ -283,9 +281,9 @@ export class CalendarComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  _onChanged: Function = () => {};
+  _onChanged: Function = () => { };
 
-  _onTouched: Function = () => {};
+  _onTouched: Function = () => { };
 
   _payloadToTimeNumber(value: CalendarComponentPayloadTypes): number {
     let date;
@@ -335,8 +333,9 @@ export class CalendarComponent implements ControlValueAccessor, OnInit {
         return date.valueOf();
       case 'object':
         return date.toObject();
+      default:
+        return date;
     }
-    return date;
   }
 
   writeValue(obj: any): void {

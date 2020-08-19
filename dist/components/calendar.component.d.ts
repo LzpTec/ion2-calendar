@@ -1,7 +1,7 @@
-import { OnInit, EventEmitter, Provider } from '@angular/core';
-import { CalendarMonth, CalendarModalOptions, CalendarComponentOptions, CalendarDay, CalendarComponentPayloadTypes, CalendarComponentMonthChange, CalendarComponentTypeProperty } from '../calendar.model';
-import { CalendarService } from '../services/calendar.service';
+import { EventEmitter, OnInit, Provider } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
+import { CalendarComponentMonthChange, CalendarComponentOptions, CalendarComponentPayloadTypes, CalendarComponentTypeProperty, CalendarDay, CalendarModalOptions, CalendarMonth } from '../calendar.model';
+import { CalendarService } from '../services/calendar.service';
 export declare const ION_CAL_VALUE_ACCESSOR: Provider;
 export declare class CalendarComponent implements ControlValueAccessor, OnInit {
     calSvc: CalendarService;
@@ -10,9 +10,11 @@ export declare class CalendarComponent implements ControlValueAccessor, OnInit {
     _view: 'month' | 'days';
     _calendarMonthValue: CalendarDay[];
     _showToggleButtons: boolean;
-    showToggleButtons: boolean;
+    get showToggleButtons(): boolean;
+    set showToggleButtons(value: boolean);
     _showMonthPicker: boolean;
-    showMonthPicker: boolean;
+    get showMonthPicker(): boolean;
+    set showMonthPicker(value: boolean);
     monthOpt: CalendarMonth;
     format: string;
     type: CalendarComponentTypeProperty;
@@ -22,7 +24,8 @@ export declare class CalendarComponent implements ControlValueAccessor, OnInit {
     select: EventEmitter<CalendarDay>;
     selectStart: EventEmitter<CalendarDay>;
     selectEnd: EventEmitter<CalendarDay>;
-    options: CalendarComponentOptions;
+    set options(value: CalendarComponentOptions);
+    get options(): CalendarComponentOptions;
     readonly MONTH_DATE_FORMAT = "MMMM yyyy";
     constructor(calSvc: CalendarService);
     ngOnInit(): void;
